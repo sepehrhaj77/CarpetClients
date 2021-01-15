@@ -1,0 +1,32 @@
+GET http://localhost:3000/api
+
+###
+
+GET http://localhost:3000/api/5ffe250fac48aacf116cd003
+
+###
+
+POST http://localhost:3000/api
+Content-Type: application/json
+
+{
+    "name": "john smith",
+    "email": "test@test.com",
+    "mailAddress": "2345 development blvd",
+    "jobAddress": "1234 testing lane",
+    "phoneNumber": "123-456-7890",
+    "materialInstalled": "vinyl"
+}
+
+### 
+DELETE http://localhost:3000/api/5fffaeacc2c208174620bc39
+
+###
+
+PATCH http://localhost:3000/api/5ffe2e8404960fea7d7d07c3
+Content-Type: application/json
+
+{
+    "name": "ohg yeah",
+    "email": "schmorgen@borgen.com"
+}
