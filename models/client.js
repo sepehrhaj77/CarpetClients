@@ -5,10 +5,6 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
-        type: String,
-        required: true
-    },
     jobAddress: {
         type: String
     },
@@ -22,7 +18,8 @@ const clientSchema = new mongoose.Schema({
         type: String
     },
     lastInstallDate: {
-        type: Date
+        type: String,
+        required: true
     }
 })
 

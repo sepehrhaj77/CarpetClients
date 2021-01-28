@@ -1,7 +1,14 @@
 *{
     padding: 0;
     margin: 0;
+    font-size: .8rem;
 }
 html{
     background-color: rgba(240, 229, 229, 0.885);
+}
+#client-cards{
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }

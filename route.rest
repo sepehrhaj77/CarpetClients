@@ -10,16 +10,16 @@ POST http://localhost:3000/api
 Content-Type: application/json
 
 {
-    "name": "john smith",
-    "email": "test@test.com",
-    "mailAddress": "2345 development blvd",
-    "jobAddress": "1234 testing lane",
+    "name": "number four",
+    "mailAddress": "2 development blvd",
+    "jobAddress": "2 testing lane",
     "phoneNumber": "123-456-7890",
-    "materialInstalled": "vinyl"
+    "materialInstalled": "vinyl",
+    "lastInstallDate": "2015-07-01"
 }
 
 ### 
-DELETE http://localhost:3000/api/5fffaeacc2c208174620bc39
+DELETE http://localhost:3000/api/
 
 ###
 

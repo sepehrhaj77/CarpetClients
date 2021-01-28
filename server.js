@@ -23,7 +23,7 @@ app.engine('hbs', handlebars({
 
 //connect to html css files
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.json()) //allow server to accept json as a body instead of just POST or GET etc.
 
 //connect to router files
