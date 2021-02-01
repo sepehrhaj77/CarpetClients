@@ -4,6 +4,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 const path = require('path');
 const handlebars = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
 
@@ -25,6 +26,7 @@ app.engine('hbs', handlebars({
 app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.json()) //allow server to accept json as a body instead of just POST or GET etc.
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //connect to router files
 const apiRouter = require('./routes/apiRouter') 

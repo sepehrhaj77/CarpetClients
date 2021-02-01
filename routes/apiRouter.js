@@ -17,19 +17,19 @@ router.get('/:id', getClient, (req, res) => {
 })
 //POST data
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const client = new Client({
         name: req.body.name,
-        email: req.body.email,
-        jobAddress: req.body.jobAddress,
-        mailAddress: req.body.mailAddress,
-        phoneNumber: req.body.phoneNumber,
-        materialInstalled: req.body.materialInstalled,
-        lastInstallDate: req.body.lastInstallDate        
+        jobAddress: req.body.job,
+        mailAddress: req.body.mail,
+        phoneNumber: req.body.phone,
+        materialInstalled: req.body.material,
+        lastInstallDate: req.body.install        
     })
     //verify data is valid before submitting to database
     try{
         const newClient = await client.save()
-        res.status(201).json(newClient) //201 status means successfully create something
+        res.redirect('/new_client')
     } catch(err){
         res.status(400).json({ message: err.message}) //400 status means the user sent bad input and the server is fine
     }

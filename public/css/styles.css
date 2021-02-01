@@ -1,14 +1,63 @@
 *{
     padding: 0;
     margin: 0;
-    font-size: .8rem;
+    font-size: 1.5rem;
 }
 html{
     background-color: rgba(240, 229, 229, 0.885);
 }
+#input-fields{
+    display: flex;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    justify-content: space-between;
+}
 #client-cards{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+.client-card{
+    display: flex;
+    border: 1px solid black; 
+    width: 400px; 
+    height: 200px;
+    align-items: center;
+    padding: 2%;
+    margin-top: 2vh;
+}
+#client-info-form{
+    margin-left: 25vw;
+    margin-right: 15vw;
+    margin-top: 5vh;
+    width: 50vw;
+    height: 50vh;
+}
+.input-field{
+    float:right;
+    padding: 5px;
+}
+h1{
+    text-align: center;
+    margin-top: 5vh;
+}
+.form-input{
+    width: 50vw;
+}
+#submit-button{
+    float: right;
+    clear: both;
+    padding: 5px;
+    margin: 5px 5px;
+    font-size: 1rem;
+}
+#back-button{
+    color: blue;
+}
+a:visited{
+    color: blue;
 }
