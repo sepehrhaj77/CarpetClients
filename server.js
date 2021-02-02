@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express()
-require('dotenv').config()
 const mongoose = require('mongoose');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
+//require('dotenv').config()
 
 const port = process.env.PORT || 3000;
 
