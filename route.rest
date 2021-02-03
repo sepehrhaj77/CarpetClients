@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:3000/api/
+DELETE http://localhost:3000/api/john smith
 
 ###
 

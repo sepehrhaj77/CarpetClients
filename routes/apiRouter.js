@@ -53,8 +53,8 @@ router.patch('/:id', getClient, async (req, res) => {
     }
 
 })
-//DELETE an instance
-router.delete('/:id', getClient, async (req, res) => {
+//DELETE an instance by looking up their name as the key 
+router.delete('/:name', getClient, async (req, res) => {
     try{
         await res.client.remove()
         res.json({message: 'deleted client'})
@@ -67,7 +67,7 @@ router.delete('/:id', getClient, async (req, res) => {
 async function getClient(req, res, next){
     let client;
     try{
-        client = await Client.findById(req.params.id)
+        client = await Client.findOne({name: req.params.name})
         if(client == null){
             return res.status(404).json({message: 'Cannot find client'})
         }

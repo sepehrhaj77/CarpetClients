@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-//require('dotenv').config()
+if(process.env.NODE_ENV != 'production'){
+    require('dotenv').config()  
+}
 
 const port = process.env.PORT || 3000;
 
@@ -34,4 +36,4 @@ const viewsRouter = require('./routes/viewsRouter')
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
 
-app.listen(3000, ()=> console.log('server started'))
+app.listen(port, ()=> console.log('Server started'))
