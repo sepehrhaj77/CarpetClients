@@ -1,3 +1,5 @@
+const baseUrl = 'https://carpet-clients.herokuapp.com'
+
 //connect 'Show All Clients' button to function showAllClients()
 const showAllButton = document.getElementById('show-all-button')
 showAllButton.addEventListener('click', showAllClients)
@@ -10,7 +12,7 @@ filterButton.addEventListener('click', sortClients)
 //Helper function to retrieve all clients
 async function fetchClients(){
     try{
-        const res = await fetch('http://localhost:3000/api');
+        const res = await fetch(`${baseUrl}/api`);
         const clients = await res.json();
         return clients;
     } catch(err){
@@ -122,7 +124,7 @@ async function deleteSelf(event){
         //grab the name of the client
         const clientName = deleteButton.parentElement.firstChild.firstChild.innerText
         console.log(clientName)
-        const res = await fetch(`http://localhost:3000/api/${clientName}`, {
+        const res = await fetch(`${baseUrl}/api/${clientName}`, {
             method: 'DELETE'
         });
 
