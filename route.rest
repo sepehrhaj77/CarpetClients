@@ -23,10 +23,9 @@ DELETE http://localhost:3000/api/q
 
 ###
 
-PATCH http://localhost:3000/api/5ffe2e8404960fea7d7d07c3
+PATCH http://localhost:3000/api/q
 Content-Type: application/json
 
 {
-    "name": "ohg yeah",
-    "email": "schmorgen@borgen.com"
+    "name": "double you"
 }

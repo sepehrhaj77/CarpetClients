@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 })
 //GET a specific instance
-router.get('/:id', getClient, (req, res) => {
+router.get('/:name', getClient, (req, res) => {
     res.send(res.client)
 })
 //POST data
@@ -37,13 +37,15 @@ router.post('/', async (req, res) => {
 })
 //UPDATE an instance - update one field of the object
 // router.put would update the whole object
-router.patch('/:id', getClient, async (req, res) => {
-    if(req.body.name != null){ //if the user passed a name to update
-        res.client.name = req.body.name
-    }
-    if(req.body.email != null){ //if the user passed an email to update
-        res.client.email = req.body.email
-    }
+router.put('/:name', getClient, async (req, res) => {
+    
+    res.client.name = req.body.name
+    res.client.mailAddress = req.body.mailAddress
+    res.client.jobAddress = req.body.jobAddress
+    res.client.materialInstalled = req.body.materialInstalled
+    res.client.phoneNumber = req.body.phoneNumber
+    res.client.lastInstallDate = req.body.lastInstallDate
+    
 
     try{
         const updatedClient = await res.client.save()

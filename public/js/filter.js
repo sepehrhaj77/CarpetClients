@@ -1,4 +1,5 @@
 const baseUrl = 'https://carpet-clients.herokuapp.com'
+//const baseUrl = 'http://localhost:3000'
 
 //connect 'Show All Clients' button to function showAllClients()
 const showAllButton = document.getElementById('show-all-button')
@@ -36,6 +37,9 @@ function displayClient(client){
     const clientInstallDate = document.createElement('li')
     const deleteButton = document.createElement('button')
     deleteButton.classList.add('delete-button')
+    const updateButton = document.createElement('button')
+    updateButton.classList.add('update-button')
+    updateButton.addEventListener('click', updateClient)
 
     clientName.innerText = client.name
     clientAddress.innerText = client.mailAddress
@@ -43,6 +47,7 @@ function displayClient(client){
     clientMaterial.innerText = client.materialInstalled
     clientInstallDate.innerText = client.lastInstallDate
     deleteButton.innerText = 'Delete'
+    updateButton.innerText = 'Update'
 
     informationList.style = "list-style-type:none"
     informationList.appendChild(clientName)
@@ -51,9 +56,9 @@ function displayClient(client){
     informationList.appendChild(clientMaterial)
     informationList.appendChild(clientInstallDate)
     
-    
     clientDiv.appendChild(informationList)
     clientDiv.appendChild(deleteButton)
+    clientDiv.appendChild(updateButton)
     parentDiv.appendChild(clientDiv)
     
 }
@@ -76,9 +81,9 @@ async function sortClients(){
             const secondDate = document.getElementById("search-date-two").value
             const clientDate = moment(client.lastInstallDate)
             
-            const diffLow = clientDate.diff(firstDate, 'months')
-            const diffHigh = clientDate.diff(secondDate, 'months')
-            if(diffLow > 0 && diffHigh < 0){
+            const diffLow = clientDate.diff(firstDate, 'days')
+            const diffHigh = clientDate.diff(secondDate, 'days')
+            if(diffLow >= 0 && diffHigh <= 0){
                 displayClient(client)
             }
         });
@@ -103,6 +108,7 @@ async function showAllClients(){
         }
         
         const clients = await fetchClients();
+        console.log(clients)
         clients.forEach(client => {
             displayClient(client)
         })
@@ -133,4 +139,11 @@ async function deleteSelf(event){
     } catch(err){
         console.error(err)
     }
+}
+
+//gather name of client before redirecting to client update page
+function updateClient(event){
+    const updateButton = event.target //get the button so we can access the name of the client
+    const clientName = updateButton.parentElement.firstChild.firstChild.innerText
+    window.location = baseUrl+'/update_client/'+clientName
 }
