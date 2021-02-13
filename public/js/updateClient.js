@@ -54,22 +54,22 @@ function sendUpdateRequest(){
         materialInstalled: document.getElementById('material-input').value,
         lastInstallDate: document.getElementById('install-input').value
     }
-    console.log(data)
     
-        const putMethod = {
-            method: 'PUT', // Method itself
-            headers: {
-             'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
-            },
-            body: JSON.stringify(data) // We send data in JSON format
-        }
+    const putMethod = {
+        method: 'PUT', // Method itself
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+        },
+        body: JSON.stringify(data) // We send data in JSON format
+    }
 
-        //make the HTTP put request
-        fetch(`${baseUrl}/api/${clientName}`, putMethod)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
+    //make the HTTP put request
+    fetch(`${baseUrl}/api/${clientName}`, putMethod)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err))
     
+    window.location = baseUrl
 }
 
 displayClient()

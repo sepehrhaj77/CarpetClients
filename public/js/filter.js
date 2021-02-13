@@ -108,7 +108,6 @@ async function showAllClients(){
         }
         
         const clients = await fetchClients();
-        console.log(clients)
         clients.forEach(client => {
             displayClient(client)
         })
@@ -129,7 +128,6 @@ async function deleteSelf(event){
     try{
         //grab the name of the client
         const clientName = deleteButton.parentElement.firstChild.firstChild.innerText
-        console.log(clientName)
         const res = await fetch(`${baseUrl}/api/${clientName}`, {
             method: 'DELETE'
         });
