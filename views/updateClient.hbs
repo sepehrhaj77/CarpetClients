@@ -1,0 +1,36 @@
+<p id="name-holder" style="display: none;">{{name}}</p>
+
+<h1>Update Client Information</h1>
+
+<div id="client-info-form">
+    <a href="/" id="back-button">Back</a>
+    <form>
+        <div class="input-field">
+            <label for="name">Name:</label>
+            <input type="text" id="name-input" class="form-input" name="name" required> 
+        </div>
+        <div class="input-field">
+            <label for="job">Job Address:</label>
+            <input type="text" id="job-input" class="form-input" name="job" required>
+        </div>
+        <div class="input-field">
+            <label for="mail">Mail Address:</label>
+            <input type="text" id="mail-input" class="form-input" name="mail" required>
+        </div>
+        <div class="input-field">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone-input" class="form-input" name="phone" required>
+        </div>
+        <div class="input-field">
+            <label for="material">Material Installed:</label>
+            <input type="text" id="material-input" class="form-input" name="material" required>
+        </div>
+        <div class="input-field">
+            <label for="install">Last Install Date:</label>
+            <input type="text" id="install-input" class="form-input" name="install" placeholder="YYYY-MM-DD" required>
+        </div>
+        <input id="submit-button" type="button" value="Submit">
+    </form>
+</div>
+
+<script src="../static/js/updateClient.js"></script>
