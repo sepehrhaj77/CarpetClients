@@ -1,5 +1,5 @@
-// const baseUrl = 'https://carpet-clients.herokuapp.com'
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://carpet-clients.herokuapp.com'
+// const baseUrl = 'http://localhost:3000'
 
 //connect 'Show All Clients' button to function showAllClients()
 const showAllButton = document.getElementById('show-all-button')
