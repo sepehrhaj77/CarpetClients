@@ -19,12 +19,12 @@ router.get('/:name', getClient, (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body)
     const client = new Client({
-        name: req.body.name,
-        jobAddress: req.body.job,
-        mailAddress: req.body.mail,
-        phoneNumber: req.body.phone,
-        materialInstalled: req.body.material,
-        lastInstallDate: req.body.install        
+        name: req.body.name.trim(),
+        jobAddress: req.body.job.trim(),
+        mailAddress: req.body.mail.trim(),
+        phoneNumber: req.body.phone.trim(),
+        materialInstalled: req.body.material.trim(),
+        lastInstallDate: req.body.install.trim()        
     })
     //verify data is valid before submitting to database
     try{
@@ -39,12 +39,12 @@ router.post('/', async (req, res) => {
 // router.put would update the whole object
 router.put('/:name', getClient, async (req, res) => {
     
-    res.client.name = req.body.name
-    res.client.mailAddress = req.body.mailAddress
-    res.client.jobAddress = req.body.jobAddress
-    res.client.materialInstalled = req.body.materialInstalled
-    res.client.phoneNumber = req.body.phoneNumber
-    res.client.lastInstallDate = req.body.lastInstallDate
+    res.client.name = req.body.name.trim()
+    res.client.mailAddress = req.body.mailAddress.trim()
+    res.client.jobAddress = req.body.jobAddress.trim()
+    res.client.materialInstalled = req.body.materialInstalled.trim()
+    res.client.phoneNumber = req.body.phoneNumber.trim()
+    res.client.lastInstallDate = req.body.lastInstallDate.trim()
     
 
     try{

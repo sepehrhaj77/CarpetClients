@@ -1,5 +1,5 @@
-const baseUrl = 'https://carpet-clients.herokuapp.com'
-//const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://carpet-clients.herokuapp.com'
+const baseUrl = 'http://localhost:3000'
 
 //retrieve client name from variable passed through route, stored in hidden html
 const clientName = document.getElementById('name-holder').innerText
