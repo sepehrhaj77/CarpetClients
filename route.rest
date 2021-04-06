@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:3000/api/q
+DELETE http://localhost:3000/api/%20%20test%203%20%20
 
 ###
 

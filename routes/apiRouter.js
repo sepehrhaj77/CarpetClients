@@ -3,7 +3,7 @@ const router = express.Router()
 const Client = require('../models/client')
 
 //GET all
-router.get('/', async (req, res) => {
+router.get('/', bypassCORS, async (req, res) => {
     try{
         const clients = await Client.find()
         res.json(clients)
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 })
 //GET a specific instance
-router.get('/:name', getClient, (req, res) => {
+router.get('/:name', getClient, bypassCORS, (req, res) => {
     res.send(res.client)
 })
 //POST data
@@ -78,6 +78,11 @@ async function getClient(req, res, next){
     }
 
     res.client = client //add a variable to the response object to be used by the functions calling this middleware
+    next()
+}
+
+function bypassCORS(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*')
     next()
 }
 
