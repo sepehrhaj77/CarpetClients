@@ -1,23 +1,23 @@
+<div id='input-fields'>
 
-<div id="input-fields">
-    
-    <form action="/new_client">
-        <button id="add-client-button">Add New Client</button>
+    <form action='/new_client'>
+        <button class='client-button' id='add-client-button'>Add New Client</button>
     </form>
-    <button id="show-all-button">Show All Clients</button>  
+    <div class='break'></div>
+    <button class='client-button' id='show-all-button'>Show All Clients</button>
 
-    <div class="break"></div> <!--break for formatting-->
-  
-    <button id="filter-clients-button">Filter Clients</button>
-    <label for="search-date">Dates(YYYY-MM-DD):</label>
-    <input type="text" id="search-date-one" name="search-date-one" placeholder="YYYY-MM-DD" value="2010-01-01">
-    <input type="text" id="search-date-two" name="search-date-two" placeholder="YYYY-MM-DD" value="2020-01-01">
-    
+    <div class='break'></div>
+    <!--break for formatting-->
+
+    <button class='client-button' id='filter-clients-button'>Filter Clients</button>
+    <div class='break'></div>
+    <label for='search-date'>Dates(YYYY-MM-DD):</label>
+    <input type='text' class='date-input' id='search-date-one' name='search-date-one' placeholder='YYYY-MM-DD' value='2010-01-01' />
+    <input type='text' class='date-input' id='search-date-two' name='search-date-two' placeholder='YYYY-MM-DD' value='2020-01-01' />
+
 </div>
 
-<div id="client-cards">
-    
-</div>
+<div id='client-cards'></div>
 
-<script src="https://unpkg.com/moment"></script>
-<script src="static/js/filter.js"></script>
+<script src='https://unpkg.com/moment'></script>
+<script src='static/js/filter.js'></script>

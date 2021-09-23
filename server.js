@@ -37,7 +37,7 @@ app.engine('hbs', handlebars({
 app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.json()) //allow server to accept json as a body instead of just POST or GET etc.
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false })); //allow server to receive form data
 
 //connect to router files
 const apiRouter = require('./routes/apiRouter') 
